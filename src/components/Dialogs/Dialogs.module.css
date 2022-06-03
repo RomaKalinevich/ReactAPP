@@ -1,8 +1,24 @@
-.header{
-    grid-area: h;
-    background-color: green;
-  }
-  
-.header img{
-    width: 90px;
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItem {
+    padding: 10px;
+}
+.dialogsItem .active{
+    color: gold;
+}
+
+.dialog a{
+    color: bisque;
+    text-decoration: none;
+}
+
+.messages {
+    padding: 10px;
+}
+
+.message {
+
 }
