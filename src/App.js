@@ -6,6 +6,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 const App = () => {
+    let messages = [{id: 1, message: "Hi"}, {id: 2, message: "Hello"}, {id: 3, message: "Hello world"}, {id: 4, message: "Hello world Mother Fucker"}];
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
