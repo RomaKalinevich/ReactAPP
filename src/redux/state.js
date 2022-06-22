@@ -1,4 +1,7 @@
 import {type} from "@testing-library/user-event/dist/type";
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
     _state: {
@@ -11,8 +14,10 @@ let store = {
             messages: [{id: 1, message: "Hi"}, {id: 2, message: "Hello"}, {id: 3, message: "Hello world"},
                 {id: 4, message: "Hello world Mother Fucker"}],
             dialogs: [{id: 1, name: "Roma"}, {id: 2, name: "Marta"},
-                {id: 3, name: "Sasha"}, {id: 4, name: "Vica"}]
-        }
+                {id: 3, name: "Sasha"}, {id: 4, name: "Vica"}],
+            newMessagesBody: ""
+        },
+        sidebar: {}
     },
     _callSubscriber() {
         console.log('State changed');
@@ -24,31 +29,13 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-
-    _addPost() {
-        let newPost = {
-            id: 5,
-            text: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._callSubscriber(this._state);
-    },
-    _updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
     dispatch(action){
-         switch (action){
-             case 'ADD-POST':
-                 this._addPost();
-                 break;
-             case 'UPDATE-NEW-POST-TEXT':
-                 this._updateNewPostText(action.newText);
-                 break;
-             default :
-             {}
-         }
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        this._callSubscriber();
     }
 }
 
