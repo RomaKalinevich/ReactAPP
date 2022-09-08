@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/ReactAPP/static/css/main.f50e1390.css",
+    "main.js": "/ReactAPP/static/js/main.c1be8668.js",
+    "static/css/815.f79311ca.chunk.css": "/ReactAPP/static/css/815.f79311ca.chunk.css",
+    "static/js/815.7f0b8b73.chunk.js": "/ReactAPP/static/js/815.7f0b8b73.chunk.js",
+    "static/css/672.35dfbf89.chunk.css": "/ReactAPP/static/css/672.35dfbf89.chunk.css",
+    "static/js/672.5a76a376.chunk.js": "/ReactAPP/static/js/672.5a76a376.chunk.js",
+    "static/css/195.e920294e.chunk.css": "/ReactAPP/static/css/195.e920294e.chunk.css",
+    "static/js/195.a1a851da.chunk.js": "/ReactAPP/static/js/195.a1a851da.chunk.js",
+    "static/js/787.28cb0dcd.chunk.js": "/ReactAPP/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/ReactAPP/index.html",
+    "static/media/Dual_Ring-1s-200px.svg": "/ReactAPP/static/media/Dual_Ring-1s-200px.e39a7efb11f5463dc1af316e9c09db1f.svg",
+    "main.f50e1390.css.map": "/ReactAPP/static/css/main.f50e1390.css.map",
+    "main.c1be8668.js.map": "/ReactAPP/static/js/main.c1be8668.js.map",
+    "815.f79311ca.chunk.css.map": "/ReactAPP/static/css/815.f79311ca.chunk.css.map",
+    "815.7f0b8b73.chunk.js.map": "/ReactAPP/static/js/815.7f0b8b73.chunk.js.map",
+    "672.35dfbf89.chunk.css.map": "/ReactAPP/static/css/672.35dfbf89.chunk.css.map",
+    "672.5a76a376.chunk.js.map": "/ReactAPP/static/js/672.5a76a376.chunk.js.map",
+    "195.e920294e.chunk.css.map": "/ReactAPP/static/css/195.e920294e.chunk.css.map",
+    "195.a1a851da.chunk.js.map": "/ReactAPP/static/js/195.a1a851da.chunk.js.map",
+    "787.28cb0dcd.chunk.js.map": "/ReactAPP/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f50e1390.css",
+    "static/js/main.c1be8668.js"
+  ]
+}
