@@ -1,39 +1,48 @@
 import React from "react";
 import styles from './MyPosts.module.css';
 import Post from "./Post/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
+import {Field, reduxForm} from "redux-form";
+import {required, maxLengthCreator} from "../../../utils/validators/validators"
+import {Textarea} from "../../common/FormControls/FormsControls";
 
+const maxLength10 = maxLengthCreator(10);
 
-const MyPosts = (props) => {
-    let postElement = props.posts.map(p => <Post message={p.text} likesCount={p.likesCount}/>)
+class MyPostsForm extends React.Component {
+    render() {
+        let postElement = this.props.posts.map(p => <Post key={p.id} message={p.text} likesCount={p.likesCount}/>)
 
-    let newPostElement = React.createRef();
+        let onAddPost = (values) => {
+            this.props.addPost(values.newMessage);
+        }
 
-    let onAddPost = () => {
-        props.addPost();
-    }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
-
-    return <div className={styles.postsBlock}>
-        <h2>
-            My posts
-        </h2>
-        <div>
-            <div>
-                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
-            </div>
-            <div>
-                <button onClick={onAddPost}>Add post</button>
+        return <div className={styles.postsBlock}>
+            <h2>
+                My posts
+            </h2>
+            <MyPostFormRedux onSubmit={onAddPost}/>
+            <div className={styles.posts}>
+                {postElement}
             </div>
         </div>
-        <div className={styles.posts}>
-            { postElement }
-        </div>
-    </div>
+    }
 }
 
-export default MyPosts
+const AddNewPostForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field name={"newMessage"} component={Textarea} validate={[required, maxLength10]}/>
+            </div>
+            <div>
+                <button>Add post</button>
+            </div>
+        </form>
+    )
+}
+
+const MyPostFormRedux = reduxForm({
+    form: 'ProfileAddNewPostForm'
+})(AddNewPostForm)
+
+
+export default MyPostsForm
